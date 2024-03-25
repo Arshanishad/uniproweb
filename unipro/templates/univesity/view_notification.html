@@ -1,0 +1,36 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+{% extends 'univesity/universityindex.html' %}
+{% block body %}
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="200" border="1"class="table">
+    <tr>
+      <td>COURSE</td>
+      <td>SEM</td>
+      <td>NOTIFICATION</td>
+      <td>DATE</td>
+      <td>&nbsp;</td>
+    </tr>
+    {% for i in data  %}
+    <tr class="table-primary">
+      <td>{{i['course']}}</td>
+      <td>{{i['sem']}}</td>
+      <td>{{i['notification']}}</td>
+      <td>{{i['date']}}</td>
+      <td><a href="dlt_notification?id={{ i['n_id'] }}">DELETE</a></td>
+    </tr>
+    {% endfor %}
+    <tr class="table-active">
+      <td colspan="5"><div align="center"><a href="sendnotification#get-started">ADD</a></div></td>
+    </tr>
+  </table>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}

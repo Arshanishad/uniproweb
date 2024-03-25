@@ -1,0 +1,39 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+{% extends 'colleges/collegeindex.html' %}
+{% block body %}
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="viewstudent#get-started">
+  <table width="378" border="1" class="table">
+    <tr class="table-danger">
+      <td width="46">NAME</td>
+      <td width="33">DOB</td>
+      <td width="62">GENDER</td>
+      <td width="26">PIN</td>
+      <td width="49">PLACE</td>
+      <td width="39">POST</td>
+      <td width="4">EMAIL</td>
+      <td width="67">PHONE</td>
+    </tr>
+    {% for i in data %}
+    <tr class="table-warning">
+      <td>{{ i['firstname']}} {{ i['lastname'] }}</td>
+      <td>&nbsp;{{ i['dob'] }}</td>
+      <td>{{ i['genter'] }}</td>
+      <td>&nbsp;{{ i['pin'] }}</td>
+      <td>{{ i['place'] }}</td>
+      <td>{{ i['post'] }}</td>
+      <td>{{ i['email'] }}</td>
+      <td>{{ i['contact'] }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}

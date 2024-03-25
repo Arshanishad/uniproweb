@@ -1,0 +1,38 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+{% extends 'colleges/collegeindex.html' %}
+{% block body %}
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="viewfeedback3#get-started">
+  <table width="200" border="1">
+    <tr>
+      <td>TYPE</td>
+      <td><select name="select" required>
+        <option value="STUDENT" {% if t == "STUDENT" %}selected{% endif %}>STUDENT</option>
+        <option value="TEACHERS" {% if t == "TEACHERS" %}selected{% endif %}>TEACHERS</option>
+      </select>
+      </td>
+      <td><input type="submit" name="Submit" value="SEARCH" /></td>
+    </tr>
+    <tr>
+      <td>USERNAME</td>
+      <td>FEEDBACK</td>
+      <td>DATE</td>
+    </tr>
+    {% for i in data%}
+    <tr>
+      <td>{{i['firstname']}} {{i['lastname']}}</td>
+      <td>&nbsp;{{i['feedback']}}</td>
+      <td>{{i['date']}}</td>
+    </tr>
+    {%endfor%}
+  </table>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}

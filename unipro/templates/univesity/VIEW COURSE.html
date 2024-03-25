@@ -1,0 +1,41 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+{% extends 'univesity/universityindex.html' %}
+{% block body %}
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table border="1"class="table">
+    <tr class="table-primary">
+      <td>#</td>
+      <td>Department</td>
+      <td width="62">COURSE</td>
+      <td width="81">DURATION</td>
+      <td width="36">FEES</td>
+      <td width="116">&nbsp;</td>
+    </tr>
+    {% for i in data %}
+    <tr class="table-info">
+      <td>{{ loop.index }}</td>
+      <td>{{ i['department'] }}</td>
+      <td>{{ i['course'] }}</td>
+      <td>{{ i['duration'] }}</td>
+      <td>{{ i['fees'] }}</td>
+      <td><a href="/editcourse?id={{ i['course_id'] }}#get-started">EDIT</a><br>
+      <a href="/dlt_viewcourse?id={{ i['course_id'] }}">DELETE</a></td>
+    </tr>
+    {% endfor %}
+    <tr class="table-danger">
+      <td align="center" colspan="6">
+       <a href="/addcourse#get-started">ADD</a>
+      </td>
+    </tr>
+  </table>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}

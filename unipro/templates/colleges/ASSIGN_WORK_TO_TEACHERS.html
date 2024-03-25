@@ -1,0 +1,30 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+{% extends 'colleges/collegeindex.html' %}
+{% block body %}
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="assign_teachers#get-started">
+  <table width="200" border="1" class="table">
+    <tr class="table-danger">
+      <td>DEPARTMENT </td>
+      <td>PROJECT TOPIC</td>
+      <td>&nbsp;</td>
+    </tr>
+    {% for i in data %}
+    <tr class="table-info">
+      <td>{{ i['department']}}</td>
+      <td>{{ i['topic']}}</td>
+      <td><a href="assign?id={{i['p_id']}}&did={{i['d_id']}}" class="text-primary">ASSIGN</a></td>
+    </tr>
+    {% endfor %}
+
+  </table>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}

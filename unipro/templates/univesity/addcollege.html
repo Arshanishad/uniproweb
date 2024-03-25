@@ -1,0 +1,77 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+{% extends 'univesity/universityindex.html' %}
+{% block body %}
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form action="acollege" method="post">
+<table border="1"class="table table-dark table-hover">
+  <tr>
+    <td>college name</td>
+    <td>
+      <input type="text" name="textfield" id="textfield" required pattern="[A-Z a-z.]{3,25}"  />
+    </td>
+  </tr>
+  
+  <tr>
+    <td>college email</td>
+    <td>
+      <input type="text" name="textfield2" id="textfield2"  required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}"/>
+  </td>
+  </tr>
+  <tr>
+    <td>established year </td>
+    <td>      <input type="text" name="textfield10" id="textfield10" min="1947-01-01"  required />
+</td>
+  </tr>
+  <tr>
+    <td>phone</td>
+    <td>
+      <input type="text" name="textfield3" id="textfield3" required pattern="[6789][0-9]{9}"/>
+      </td>
+  </tr>
+  <tr>
+    <td>place</td>
+    <td>
+      <input type="text" name="textfield4"  id="textfield4"required pattern="[A-Z a-z.]{3,25}"/>
+ </td>
+  </tr>
+  <tr>
+    <td>post</td>
+    <td>
+      <input type="text" name="textfield5" id="textfield5" required pattern="[A-Z a-z.]{3,25}"/>
+     </td>
+  </tr>
+  <tr>
+    <td>pin</td>
+    <td>
+      <input type="text" name="textfield7" id="textfield7" required pattern="[0-9]{6}"/>
+    </td>
+  </tr>
+  <tr>
+    <td>username</td>
+    <td>
+      <input type="text" name="textfield6" id="textfield6" required pattern="[A-Z a-z.]{3,25}" />
+       </td>
+  </tr>
+  <tr>
+    <td>password</td>
+    <td>
+      <input type="text" name="textfield9" id="textfield9"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required/>
+   </td>
+  </tr>
+  <tr>
+    <td align="center" colspan="2">
+        <input type="submit" name="Submit" value="REGISTER" />
+    </td>
+    </tr>
+</table>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}

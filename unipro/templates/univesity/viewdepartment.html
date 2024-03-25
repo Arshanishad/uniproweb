@@ -1,0 +1,32 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+{% extends 'univesity/universityindex.html' %}
+{% block body %}
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="adddept#get-started">
+  <table width="200" border="1"class="table">
+    <tr class="table-primary">
+      <td>DEPARTMENT</td>
+      <td></td>
+    </tr>
+   {% for i in data %}
+    <tr  class="table-danger">
+      <td>{{ i['department'] }}</td>
+      <td ><a href="dlt_department?id={{ i['d_id'] }}" class="text-primary">Delete</a></td>
+    </tr>
+    {% endfor %}
+    <tr class="table-info">
+      <td colspan="2"><div align="center"><a href="#">
+        <input type="submit" name="Submit" value="ADD NEW" class="btn btn-outline-danger"/>
+      </a></div></td>
+    </tr>
+  </table>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}

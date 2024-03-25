@@ -1,0 +1,48 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--&lt;!&ndash;<html xmlns="http:-->
+<!--//www.w3.org/1999/xhtml">&ndash;&gt;-->
+{% extends 'colleges/collegeindex.html' %}
+{% block body %}
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="461" border="1" class="table">
+    <tr class="table-info">
+      <td>NAME</td>
+      <td>GENDER</td>
+      <td>DEPARTMENT</td>
+      <td>PIN</td>
+      <td>PLACE</td>
+      <td>POST</td>
+      <td>PHONE</td>
+      <td>EMAIL</td>
+      <td>&nbsp;</td>
+    </tr>
+    {% for i in data %}
+    <tr class="table-warning">
+      <td>&nbsp;{{ i['firstname'] }}  {{ i['lastname'] }}</td>
+      <td>{{ i['gender'] }}</td>
+      <td>{{ i['department'] }}</td>
+      <td>{{ i['pin'] }}</td>
+      <td>{{ i['place'] }}
+      <td>&nbsp;{{ i['post'] }}</td>
+      <td>&nbsp;{{ i['phone'] }}</td>
+      <td>&nbsp;{{ i['email'] }}</td>
+      <td><p><a href="update_teachers?id={{i['teacher_id']}}#get-started" class="text-primary">EDIT</a></p>
+      <p><a href="dlt_teachers?id={{i['teacher_id']}}" class="text-primary">DELETE</a></p></td>
+    </tr>
+    {% endfor %}
+    <tr class="table-active">
+      <td colspan="9" align=center><label>
+        <a href="/reg_teachers#get-started" class="text-danger">ADD</a>
+      </label></td>
+    </tr>
+  </table>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}
